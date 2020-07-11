@@ -3,68 +3,45 @@
 # Contributing
 
 ## General Workflow
+-1. Clone done repo and set up environment
+    from the command line:
 
-1. Fork the repo
-1. Cut a namespaced feature branch from master
-  - bug/...
-  - feat/...
-  - test/...
-  - doc/...
-  - refactor/...
-1. Make commits to your feature branch. Prefix each commit like so:
-  - (feat) Added a new feature
-  - (fix) Fixed inconsistent tests [Fixes #0]
-  - (refactor) ...
-  - (cleanup) ...
-  - (test) ...
-  - (doc) ...
-1. When you've finished with your fix or feature, Rebase upstream changes into your branch. submit a [pull request][]
-   directly to master. Include a description of your changes.
-1. Your pull request will be reviewed by another maintainer. The point of code
-   reviews is to help keep the codebase clean and of high quality and, equally
-   as important, to help you grow as a programmer. If your code reviewer
-   requests you make a change you don't understand, ask them why.
-1. Fix any issues raised by your code reviwer, and push your fixes as a single
-   new commit.
-1. Once the pull request has been reviewed, it will be merged by another member of the team. Do not merge your own commits.
+    npm install 
+    bower install
+0. Make sure master is up to date
+   git checkout master
+   git pull origin master
+   
+1. Create a feature branch
+   -naming convention: feature/<name of feature>
+   git checkout -b feature/<name of feature>
+   git checkout  `your-branch-name` "will move you to your branch"
 
-## Detailed Workflow
+2. Make small changes on feature branch
+   -add individual files NO git add .
+   git add <file name>
+   or git add -p
+   git commit -m <your comment>
 
-### Fork the repo
+3. Update your branch w/current master branch 
+   i. git checkout master
+   ii. git pull origin master
+   iii. git checkout feature/<name of feature>
+   iv. git rebase master
+     if there are conflicts
+       1. Determine conflict
+       2. View conflict with: 
+         git mergetool
+       3. If conflict can be resolved quickly(less than 10 minutes) AND without changing other people's code
+          Resolve conflict
+       4. If not, just push to your feature branch and let the scrum master know in your pull request
 
-Use github’s interface to make a fork of the repo, then add that repo as an upstream remote:
+4. Push feature branch to github
+   git push origin feature/<name of feature>
 
-```
-git remote add upstream https://github.com/hackreactor-labs/<NAME_OF_REPO>.git
-```
-
-### Cut a namespaced feature branch from master
-
-Your branch should follow this naming convention:
-  - bug/...
-  - feat/...
-  - test/...
-  - doc/...
-  - refactor/...
-
-These commands will help you do this:
-
-``` bash
-
-# Creates your branch and brings you there
-git checkout -b `your-branch-name`
-```
+5. Make pull request to dev
 
 ### Make commits to your feature branch. 
-
-Prefix each commit like so
-  - (feat) Added a new feature
-  - (fix) Fixed inconsistent tests [Fixes #0]
-  - (refactor) ...
-  - (cleanup) ...
-  - (test) ...
-  - (doc) ...
-
 Make changes and commits on your branch, and make sure that you
 only make changes that are relevant to this branch. If you find
 yourself making unrelated changes, make a new branch for those
