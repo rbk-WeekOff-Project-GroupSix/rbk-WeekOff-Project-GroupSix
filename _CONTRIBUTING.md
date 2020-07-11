@@ -1,6 +1,6 @@
 # Expenses Tracker
 
-# Contributing
+# Contributing Abed
 
 ## General Workflow
 -1. Clone done repo and set up environment
