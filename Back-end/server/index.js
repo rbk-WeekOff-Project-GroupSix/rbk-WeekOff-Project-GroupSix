@@ -22,24 +22,24 @@ app.use(express.json());
 });
 
 
-// app.get("/expenses",(req,res) =>{
-// expensesModel.find({})
-//    .then((result) =>{
-// 	res.send(result);
-// }).catch(err =>{
-// 	res.send(err);
-// });
-// });
+app.get("/expenses",(req,res) =>{
+expensesModel.find({})
+   .then((result) =>{
+	res.send(result);
+}).catch(err =>{
+	res.send(err);
+});
+});
 
-// //search by spec :
-// app.get("/expenses/:spec",(req , res) =>{
-//     const specVal = req.params.spec;
-//     expensesModel.find({spec: specVal}).then(result =>{
-//     	res.send(result);
-//     }).catch(err =>{
-//     	res.send(err);
-//     });
-// });
+//search by spec :
+app.get("/expenses/:spec",(req , res) =>{
+    const specVal = req.params.spec;
+    expensesModel.find({spec: specVal}).then(result =>{
+    	res.send(result);
+    }).catch(err =>{
+    	res.send(err);
+    });
+});
 
 //default port
 var port = 4000; 
