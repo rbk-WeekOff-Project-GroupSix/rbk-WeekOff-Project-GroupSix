@@ -32,7 +32,7 @@ class addTransaction extends React.Component {
   }
   render() {
     return (
-      <form onSubmit={this.props.componentDidMount}>
+      <form onClick={this.handlerSubmit.bind(this)}>
         <div>
         <label> text :  </label><br/>
           <input
@@ -52,7 +52,7 @@ class addTransaction extends React.Component {
             placeholder="Enter amount..."
           ></input>
           <br /> <br />
-          <button onClick={this.handlerSubmit.bind(this)}> Add transaction</button>
+          <button> Add transaction</button>
         </div>
       </form>
     );
