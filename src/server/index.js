@@ -4,8 +4,8 @@ let expensesModel = database.expensesModel;
 let app = express();
 
 app.use(express.json());
-// app.use(express.static(__dirname + '/../front-end/dist'));
-// app.use(express.static("dist"))
+//app.use(express.static(__dirname + '/../front-end/dist'));
+app.use(express.static(__dirname + "/.././../dist"))
 
     app.post("/expenses",(req,res)=>{
 	const {text ,amount,createdAt}= req.body;
@@ -34,15 +34,17 @@ expensesModel.find({})
 //search by spec :
 app.get("/expenses/:spec",(req , res) =>{
     const specVal = req.params.spec;
-    expensesModel.find({spec: specVal}).then(result =>{
+    expensesModel.find({spec: specVal})
+    .then(result =>{
     	res.send(result);
-    }).catch(err =>{
+    })
+    .catch(err =>{
     	res.send(err);
     });
 });
 
 //default port
-var port = 4000; 
+var port = 4040; 
 app.listen(port, ()=>{
 	console.log(`app listen to port ${port}`);
 });
