@@ -41,7 +41,7 @@ let expensesModel = mongoose.model("expenses" ,expensesSchema );
 //   }
 //   });
 
-//  module.exports.expensesModel = expensesModel;
+module.exports.expensesModel = expensesModel;
 
 
 

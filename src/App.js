@@ -6,7 +6,7 @@ import AddTransaction from "./Components/AddTransaction/AddTransaction"
 function App() {
   return (
     <div className="App">
-     <h1> Abed </h1>
+     <h1> Expenses Tracker </h1>
       <AddTransaction/>
       
     </div>

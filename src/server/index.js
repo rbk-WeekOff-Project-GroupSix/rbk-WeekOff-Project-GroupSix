@@ -1,13 +1,15 @@
 const express = require("express");
 const database = require("./../db/index");
+const cors = require("cors")
 let expensesModel = database.expensesModel;
 let app = express();
-
+app.use(cors())
 app.use(express.json());
 //app.use(express.static(__dirname + '/../front-end/dist'));
 app.use(express.static(__dirname + "/.././../dist"))
 
     app.post("/expenses",(req,res)=>{
+      console.log(req.body)
 	const {text ,amount,createdAt}= req.body;
     let expensesDocument = new expensesModel({text: text , amount:amount , createdAt:createdAt});
 

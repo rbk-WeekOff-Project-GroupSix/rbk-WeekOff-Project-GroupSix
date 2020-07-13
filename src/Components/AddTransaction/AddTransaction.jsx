@@ -32,27 +32,37 @@ class addTransaction extends React.Component {
   }
   render() {
     return (
-      <form onClick={this.handlerSubmit.bind(this)}>
+      <form onSubmit={this.handlerSubmit.bind(this)}>
         <div>
-        <label> text :  </label><br/>
+        <label> Expenses :  </label><br/>
           <input
-            type="txt"
-            text="movie"
-            value={this.state.movie}
+            type="text"
+            name="text"
+            value={this.state.text}
             onChange={this.handlerChange.bind(this)}
             placeholder="Enter text..."
           ></input>{" "}
           <br /> <br />
+          <label> Date :  </label><br/>
+          <input
+            type="date"
+            name="createdAt"
+            value={this.state.createdAt}
+            onChange={this.handlerChange.bind(this)}
+            placeholder="Enter date..."
+          ></input>
+          <br /> <br />
           <label> amount :  </label><br/>
           <input
-            type="txt"
-            text="text"
-            value={this.state.text}
+            type="text"
+            name="amount"
+            value={this.state.amount}
             onChange={this.handlerChange.bind(this)}
             placeholder="Enter amount..."
           ></input>
           <br /> <br />
           <button> Add transaction</button>
+          
         </div>
       </form>
     );
