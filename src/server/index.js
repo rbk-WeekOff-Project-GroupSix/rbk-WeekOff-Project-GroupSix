@@ -3,11 +3,14 @@ const database = require("./../db/index");
 const cors = require("cors")
 let expensesModel = database.expensesModel;
 let app = express();
+
+//Middleware
 app.use(cors())
 app.use(express.json());
 //app.use(express.static(__dirname + '/../front-end/dist'));
 app.use(express.static(__dirname + "/.././../dist"))
 
+//Requests
     app.post("/expenses",(req,res)=>{
       console.log(req.body)
 	const {text ,amount,createdAt}= req.body;
