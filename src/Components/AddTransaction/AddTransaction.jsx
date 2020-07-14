@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import { Button } from "react-bootstrap";
+
 
 class addTransaction extends React.Component {
   constructor(props) {
@@ -34,6 +36,7 @@ class addTransaction extends React.Component {
     return (
       <form onSubmit={this.handlerSubmit.bind(this)}>
         <div>
+          <h2> HOME </h2>
         <label> Expenses :  </label><br/>
           <input
             type="text"
@@ -61,7 +64,8 @@ class addTransaction extends React.Component {
             placeholder="Enter amount..."
           ></input>
           <br /> <br />
-          <button> Add transaction</button>
+          <button variant="btn btn-success"> Add transaction</button>
+          
           
         </div>
       </form>

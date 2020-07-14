@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
-import AddTransaction from "./Components/AddTransaction/AddTransaction"
 
-
-class Home extends Component {
+class Contact extends Component {
     render() {
         return (
             <div style={{ display: 'flex', justifyContent: 'center', padding: 30 }}>
-                <div> <AddTransaction/> </div>
-               
+                <div><h2>Contact Page</h2>
+                </div>
             </div>
         );
     }
 }
 
-export default Home;
+export default Contact;
