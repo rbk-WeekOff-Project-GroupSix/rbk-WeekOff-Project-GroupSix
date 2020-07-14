@@ -1,15 +1,19 @@
+// importing used files and options
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
 import "./App.css";
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import Home from "./Home.js";
+import Header from "./Components/Header/logo";
 
+// initializing firebase
 firebase.initializeApp({
   apiKey: "AIzaSyCKD1Uydm10LcXglQPGFWYqDDEuy1hAnu8",
   authDomain: "reactlogin-c308d.firebaseapp.com",
 });
 
+// creat App Component
 class App extends Component {
   state = { isSignedIn: false, step: 1 };
   nextStep = () => {
@@ -17,6 +21,7 @@ class App extends Component {
     this.setState({ step: step + 1 });
   };
 
+  //UI config for sign in
   uiConfig = {
     signInFlow: "popup",
     signInOptions: [
@@ -29,6 +34,7 @@ class App extends Component {
     },
   };
 
+  //Load data from a remote endpoint
   componentDidMount = () => {
     firebase.auth().onAuthStateChanged((user) => {
       this.setState({ isSignedIn: !!user });
@@ -36,16 +42,19 @@ class App extends Component {
     });
   };
 
+  // rendering firebase and then click on button to show our home page
   render() {
     const { step } = this.state;
+    //Switch with cases
     // eslint-disable-next-line default-case
     switch (step) {
       case 1:
         return (
           <div className="App">
+            <Header /> <br />
             {this.state.isSignedIn ? (
               <span>
-                <div>
+                <div class="myDiv">
                   Signed in succssufully
                   <h3>
                     Welcome {firebase.auth().currentUser.displayName}
@@ -54,13 +63,15 @@ class App extends Component {
                   <form>
                     <Button
                       variant="btn btn-success"
-                      onClick={ this.nextStep}
+                      className="btn1"
+                      onClick={this.nextStep}
                     >
                       {" "}
                       Next
                     </Button>
                     <Button
                       variant="btn btn-success"
+                      className="btn2"
                       onClick={() => firebase.auth().signOut()}
                     >
                       Logout
@@ -82,8 +93,10 @@ class App extends Component {
         );
       case 2:
         return (
-          <Home/>
-        )
+          <React.Fragment>
+            <Home />
+          </React.Fragment>
+        );
     }
   }
 }
