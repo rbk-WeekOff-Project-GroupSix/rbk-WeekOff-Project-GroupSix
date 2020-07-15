@@ -3,6 +3,7 @@
 const express = require("express");
 const database = require("./../db/index");
 const cors = require("cors");
+var bodyParser = require("body-parser");
 
 // calling Schema
 let expensesModel = database.expensesModel;
@@ -13,8 +14,18 @@ let app = express();
 //Middleware
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: false,
+  })
+);
 //app.use(express.static(__dirname + '/../front-end/dist'));
 app.use(express.static(__dirname + "/.././../dist"));
+
+// Routes
+var Users = require("./routes/Users");
+app.use("/users", Users);
 
 //Post request
 app.post("/expenses", (req, res) => {

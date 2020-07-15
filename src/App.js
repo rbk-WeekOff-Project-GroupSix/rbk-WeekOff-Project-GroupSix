@@ -1,11 +1,17 @@
 // importing used files and options
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import "./App.css";
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
 import Home from "./Home.js";
 import Header from "./Components/Header/logo";
+import Navbar from "./Components/Navbar";
+import Landing from "./Components/Landing";
+import Login from "./Components/Login";
+import Register from "./Components/Register";
+import Profile from "./Components/Profile";
 
 // initializing firebase
 firebase.initializeApp({
@@ -52,13 +58,23 @@ class App extends Component {
         return (
           <div className="App">
             <Header /> <br />
+            <Router>
+              <div className="App">
+                <Navbar />
+                <Route exact path="/" component={Landing} />
+                <div className="container">
+                  <Route exact path="/register" component={Register} />
+                  <Route exact path="/login" component={Login} />
+                  <Route exact path="/profile" component={Profile} />
+                </div>
+              </div>
+            </Router>
+            <br /> <h1>Or sign in using Google</h1>
             {this.state.isSignedIn ? (
               <span>
                 <div class="myDiv">
                   Signed in succssufully
-                  <h3>
-                    Welcome {firebase.auth().currentUser.displayName}
-                  </h3>{" "}
+                  <h3>Welcome {firebase.auth().currentUser.displayName}</h3>
                   <br></br>
                   <form>
                     <Button

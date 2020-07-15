@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import AddTransaction from "./Components/AddTransaction/AddTransaction";
 import firebase from "firebase";
 import { Button } from "react-bootstrap";
@@ -25,6 +26,17 @@ class Home extends Component {
         className="App"
         style={{ display: "flex", justifyContent: "center", padding: 30 }}
       >
+        {/* <Router>
+          <div className="App">
+            <Navbar />
+            <Route exact path="/" component={Landing} />
+            <div className="container">
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/profile" component={Profile} />
+            </div>
+          </div>
+        </Router> */}
         <div>
           <Header state={this.state} />
           <AddTransaction />
