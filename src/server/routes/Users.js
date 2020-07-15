@@ -63,7 +63,7 @@ users.post("/login", (req, res) => {
           res.send(token);
         } else {
           // Passwords don't match
-          res.json({ error: "User does not exist" });
+          res.status(400).json({ error: "User does not exist" });
         }
       } else {
         res.json({ error: "User does not exist" });

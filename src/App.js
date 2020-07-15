@@ -5,13 +5,14 @@ import { Button } from "react-bootstrap";
 import "./App.css";
 import firebase from "firebase";
 import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-import Home from "./Home.js";
+import Home from "./Home";
 import Header from "./Components/Header/logo";
 import Navbar from "./Components/Navbar";
 import Landing from "./Components/Landing";
 import Login from "./Components/Login";
 import Register from "./Components/Register";
-import Profile from "./Components/Profile";
+import Expenses from "./Components/Expenses";
+import user from "./Components/user";
 
 // initializing firebase
 firebase.initializeApp({
@@ -57,15 +58,17 @@ class App extends Component {
       case 1:
         return (
           <div className="App">
-            <Header /> <br />
             <Router>
+              <Header /> <br />
               <div className="App">
                 <Navbar />
                 <Route exact path="/" component={Landing} />
                 <div className="container">
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
-                  <Route exact path="/profile" component={Profile} />
+                  <Route exact path="/Expenses" component={Expenses} />
+                  <Route exact path="/user" component={user} />
+                  <Route exact path="/Home" component={Home} />
                 </div>
               </div>
             </Router>
@@ -77,21 +80,20 @@ class App extends Component {
                   <h3>Welcome {firebase.auth().currentUser.displayName}</h3>
                   <br></br>
                   <form>
-                    <Button
+                    <button
                       variant="btn btn-success"
                       className="btn1"
                       onClick={this.nextStep}
                     >
-                      {" "}
                       Next
-                    </Button>
-                    <Button
+                    </button>
+                    <button
                       variant="btn btn-success"
                       className="btn2"
                       onClick={() => firebase.auth().signOut()}
                     >
                       Logout
-                    </Button>
+                    </button>
                   </form>
                   {/* <img
                   alt="profile picture"
@@ -109,9 +111,20 @@ class App extends Component {
         );
       case 2:
         return (
-          <React.Fragment>
-            <Home />
-          </React.Fragment>
+          <Router>
+            <Header /> <br />
+            <Expenses />
+            {/* <div className="App">
+              <Navbar />
+              <div className="container">
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/Expenses" component={Expenses} />
+                <Route exact path="/user" component={user} />
+                <Route exact path="/Home" component={Home} />
+              </div>
+            </div> */}
+          </Router>
         );
     }
   }

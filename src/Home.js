@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import AddTransaction from "./Components/AddTransaction/AddTransaction";
 import firebase from "firebase";
-import { Button } from "react-bootstrap";
+// import { Button, Navbar } from "react-bootstrap";
 import Header from "./Components/Header/logo";
 import ExpenseAndIncome from "./Components/incomeandExpense/expenseAndIncode";
 import List from "./Components/listTransication/list1";
 import Income from "./Components/incomeFomr/ienterIncome";
+import Navbar from "./Components/Navbar";
 
 class Home extends Component {
   constructor() {
@@ -38,8 +39,7 @@ class Home extends Component {
           </div>
         </Router> */}
         <div>
-          <Header state={this.state} />
-          <AddTransaction />
+          <Navbar />
         </div>
 
         {/*
