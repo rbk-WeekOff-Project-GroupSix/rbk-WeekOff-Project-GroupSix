@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
+import "./nav.css";
+
+ 
 
 class Landing extends Component {
   logOut(e) {
@@ -10,6 +13,7 @@ class Landing extends Component {
 
   render() {
     const loginRegLink = (
+
       <ul className="navbar-nav">
         <li className="nav-item">
           <Link to="/login" className="nav-link">
@@ -22,6 +26,7 @@ class Landing extends Component {
           </Link>
         </li>
       </ul>
+
     );
 
     const userLink = (
@@ -64,9 +69,7 @@ class Landing extends Component {
         >
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link to="/" className="nav-link">
-                Home
-              </Link>
+       
             </li>
           </ul>
           {localStorage.usertoken ? userLink : loginRegLink}

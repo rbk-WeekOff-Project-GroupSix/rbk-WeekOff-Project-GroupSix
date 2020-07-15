@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./logoStyle.css";
+import "./logoStyle.css";
 import Income from "../incomeFomr/ienterIncome";
+
 var Header = (props) => {
   console.log(Income.state);
   return (

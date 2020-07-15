@@ -72,7 +72,7 @@ class App extends Component {
                 </div>
               </div>
             </Router>
-            <br /> <h1>Or sign in using Google</h1>
+    
             {this.state.isSignedIn ? (
               <span>
                 <div class="myDiv">

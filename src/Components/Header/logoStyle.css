@@ -1,9 +1,10 @@
 img {
-  widows: 100px;
-  height: 100px;
+  widows: 30px;
+  height: 30px;
 }
 .center {
-  display: block;
-  margin-left: auto;
+
+	    margin-left: 850px;
+  margin-bottom: -39px;
   margin-right: auto;
 }
