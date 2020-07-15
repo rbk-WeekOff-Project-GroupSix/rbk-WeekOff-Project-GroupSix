@@ -1,6 +1,8 @@
+//User Funcs compo
 import axios from "axios";
 
 export const register = (newUser) => {
+  // post request for register
   return axios
     .post("http://localhost:4040/users/register", {
       first_name: newUser.first_name,
@@ -14,6 +16,7 @@ export const register = (newUser) => {
 };
 
 export const login = (user) => {
+  // post request for login
   return axios
     .post("http://localhost:4040/users/login", {
       email: user.email,

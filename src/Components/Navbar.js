@@ -1,7 +1,10 @@
+//Navbar Component
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
+import "./Navbar.css";
 
 class Landing extends Component {
+  //logOut func
   logOut(e) {
     e.preventDefault();
     localStorage.removeItem("usertoken");
@@ -32,8 +35,13 @@ class Landing extends Component {
           </Link>
         </li>
         <li className="nav-item">
+          <Link to="/AddExpenses" className="nav-link">
+            Add Expenses
+          </Link>
+        </li>
+        <li className="nav-item">
           <Link to="/Expenses" className="nav-link">
-            My Expenses
+            Expenses
           </Link>
         </li>
         <li className="nav-item">

@@ -1,5 +1,4 @@
 // reuiring express and data base and cors
-
 const express = require("express");
 const database = require("./../db/index");
 const cors = require("cors");

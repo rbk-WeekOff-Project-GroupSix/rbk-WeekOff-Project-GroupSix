@@ -1,25 +1,27 @@
-import React, { Component } from 'react'
-import jwt_decode from 'jwt-decode'
+// Profile Component
+import React, { Component } from "react";
+import jwt_decode from "jwt-decode";
 
 class Profile extends Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      first_name: '',
-      last_name: '',
-      email: '',
-      errors: {}
-    }
+      first_name: "",
+      last_name: "",
+      email: "",
+      errors: {},
+    };
   }
-
+  
+  //componentDidMount
   componentDidMount() {
-    const token = localStorage.usertoken
-    const decoded = jwt_decode(token)
+    const token = localStorage.usertoken;
+    const decoded = jwt_decode(token);
     this.setState({
       first_name: decoded.first_name,
       last_name: decoded.last_name,
-      email: decoded.email
-    })
+      email: decoded.email,
+    });
   }
 
   render() {
@@ -47,8 +49,8 @@ class Profile extends Component {
           </table>
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Profile
+export default Profile;
