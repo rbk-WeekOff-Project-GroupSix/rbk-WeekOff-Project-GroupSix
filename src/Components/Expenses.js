@@ -43,7 +43,6 @@ class addTransaction extends React.Component {
     return (
       <form onSubmit={this.handlerSubmit.bind(this)}>
         <div className="myDiv">
-          <h2> HOME </h2>
           <label> Types of Expenses: </label>
           <br />
           <select
@@ -61,7 +60,8 @@ class addTransaction extends React.Component {
             <option value="Non-Operating Expenses">
               Non-Operating Expenses
             </option>
-          </select>{" "}
+            <option value="Other">Other</option>
+          </select>
           <br /> <br />
           <input
             type="text"
