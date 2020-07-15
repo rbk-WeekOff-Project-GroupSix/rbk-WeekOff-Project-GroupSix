@@ -50,6 +50,7 @@ class addTransaction extends React.Component {
             name="expensesTypes"
             value={this.state.expensesTypes}
             onChange={this.handlerChange.bind(this)}
+
             placeholder="Enter text..."
           >
             <option value="Operating Expenses ">Operating Expenses </option>
@@ -71,7 +72,8 @@ class addTransaction extends React.Component {
             placeholder="Enter description ..."
           ></input>
           <label> Date : </label>
-          <br />
+          
+       
           <input
             type="date"
             name="createdAt"
