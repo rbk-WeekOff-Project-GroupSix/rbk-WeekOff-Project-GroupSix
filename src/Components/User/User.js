@@ -1,7 +1,9 @@
 // Profile Component
+// import modules
 import React, { Component } from "react";
 import jwt_decode from "jwt-decode";
 
+//Create Profile Component
 class Profile extends Component {
   constructor() {
     super();
@@ -13,7 +15,7 @@ class Profile extends Component {
     };
   }
 
-  //componentDidMount
+  //componentDidMount function
   componentDidMount() {
     const token = localStorage.usertoken;
     const decoded = jwt_decode(token);
@@ -24,6 +26,7 @@ class Profile extends Component {
     });
   }
 
+  //Rendering User info form
   render() {
     return (
       <div className="container">
@@ -53,4 +56,5 @@ class Profile extends Component {
   }
 }
 
+// Exporting Profile Component
 export default Profile;

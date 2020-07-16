@@ -1,10 +1,12 @@
 // login Component
+// import modules
 import React, { Component } from "react";
 import { login } from "../UserFunctions/UserFunctions";
 // import GooLogoin from "../gooLogin";
 // import GooLogout from "../gooLogout";
 // import GoLogin from "../goLogin";
 
+//Create Login Component
 class Login extends Component {
   constructor() {
     super();
@@ -18,12 +20,12 @@ class Login extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  //onChange
+  //onChange function
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  //onSubmit
+  //onSubmit function
   onSubmit(e) {
     e.preventDefault();
 
@@ -43,6 +45,7 @@ class Login extends Component {
       });
   }
 
+  //Rendering login form
   render() {
     return (
       <div className="container">
@@ -89,4 +92,5 @@ class Login extends Component {
   }
 }
 
+// Exporting Login Component
 export default Login;

@@ -1,10 +1,12 @@
 // Expenses Component
+// import modules
 import React from "react";
 import axios from "axios";
 // import { Button } from "react-bootstrap";
 import Trans from "../Trans/Trans";
 import jwt_decode from "jwt-decode";
 
+//Create Expenses Component
 class Expenses extends React.Component {
   constructor(props) {
     super(props);
@@ -13,13 +15,15 @@ class Expenses extends React.Component {
       email: "",
     };
   }
-  // handlerChange
+  // handlerChange function
   handlerChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
     });
     console.log(event.target.name);
   }
+
+  // componentDidMount function
   componentDidMount() {
     const token = localStorage.usertoken;
     const decoded = jwt_decode(token);
@@ -27,7 +31,7 @@ class Expenses extends React.Component {
       email: decoded.email,
     });
   }
-  //handlerSubmit
+  //handlerSubmit function
   handlerSubmit(event) {
     event.preventDefault();
     axios
@@ -50,7 +54,7 @@ class Expenses extends React.Component {
   };
   render() {
     return (
-      // general form
+      // general form for expenses compo
       <form onSubmit={this.handlerSubmit.bind(this)}>
         <div className="myDiv">
           <label> Expenses List: </label>
@@ -70,4 +74,5 @@ class Expenses extends React.Component {
     );
   }
 }
+// Exporting Expenses Component
 export default Expenses;

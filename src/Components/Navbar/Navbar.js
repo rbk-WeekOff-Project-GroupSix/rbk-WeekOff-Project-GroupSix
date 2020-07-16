@@ -1,8 +1,10 @@
 //Navbar Component
+// import modules
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import "./Navbar.css";
 
+//Create Landing Component
 class Landing extends Component {
   //logOut func
   logOut(e) {
@@ -11,6 +13,7 @@ class Landing extends Component {
     this.props.history.push(`/`);
   }
 
+  //Rendering Navbar form
   render() {
     const loginRegLink = (
       <ul className="navbar-nav">
@@ -84,4 +87,5 @@ class Landing extends Component {
   }
 }
 
+// Exporting logout Component
 export default withRouter(Landing);

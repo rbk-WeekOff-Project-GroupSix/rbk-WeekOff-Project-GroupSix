@@ -1,6 +1,8 @@
-//User Funcs compo
+//User Funcs Component
+// import modules
 import axios from "axios";
 
+// Exporting newUser Component
 export const register = (newUser) => {
   // post request for register
   return axios
@@ -19,6 +21,7 @@ export const register = (newUser) => {
     });
 };
 
+// Exporting user Component
 export const login = (user) => {
   // post request for login
   return axios
@@ -36,6 +39,7 @@ export const login = (user) => {
     });
 };
 
+// Exporting getProfile Component
 export const getProfile = (user) => {
   return axios
     .get("http://localhost:4040/users/profile", {

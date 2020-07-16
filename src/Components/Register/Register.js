@@ -1,7 +1,9 @@
 // register Component
+// import modules
 import React, { Component } from "react";
 import { register } from "../UserFunctions/UserFunctions";
 
+//Create Register Component
 class Register extends Component {
   constructor() {
     super();
@@ -16,12 +18,12 @@ class Register extends Component {
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
-  // onChange func
+  // onChange function
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  // onSubmit func
+  // onSubmit function
   onSubmit(e) {
     e.preventDefault();
 
@@ -40,7 +42,7 @@ class Register extends Component {
         console.log(err);
       });
   }
-
+  //Rendering Register form
   render() {
     return (
       <div className="container">
@@ -105,5 +107,5 @@ class Register extends Component {
     );
   }
 }
-
+// Exporting Register Component
 export default Register;

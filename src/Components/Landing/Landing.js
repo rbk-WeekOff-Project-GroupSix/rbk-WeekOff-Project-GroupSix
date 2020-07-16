@@ -1,6 +1,8 @@
 // Landing Component
-import React, { Component } from 'react'
+// import modules
+import React, { Component } from "react";
 
+//Create Landing Component
 class Landing extends Component {
   render() {
     return (
@@ -11,8 +13,8 @@ class Landing extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
-
-export default Landing
+// Exporting Landing Component
+export default Landing;

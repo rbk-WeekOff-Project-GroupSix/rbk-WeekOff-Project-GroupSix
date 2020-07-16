@@ -1,7 +1,10 @@
+//Trans Component
+// import modules
 import React from "react";
 import ReactDOM from "react-dom";
 import "./Trans.css";
 
+//Create Trans Component
 class Trans extends React.Component {
   renderTableData = () => {
     return this.props.Trans.map((element, index) => {
@@ -15,6 +18,8 @@ class Trans extends React.Component {
       );
     });
   };
+
+  //Rendering Trans form
   render() {
     const { Trans } = this.props;
     return (
@@ -33,4 +38,5 @@ class Trans extends React.Component {
     );
   }
 }
+// Exporting Trans Component
 export default Trans;

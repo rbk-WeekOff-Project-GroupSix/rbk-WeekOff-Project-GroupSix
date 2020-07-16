@@ -11,7 +11,7 @@ firebase.initializeApp({
   authDomain: "reactlogin-c308d.firebaseapp.com",
 });
 
-// creat G Component
+// create GoLogin Component
 class GoLogin extends Component {
   state = { isSignedIn: false, step: 1 };
   nextStep = () => {
@@ -70,5 +70,7 @@ class GoLogin extends Component {
     }
   }
 }
+
+// export GoLogin Component
 
 export default GoLogin;

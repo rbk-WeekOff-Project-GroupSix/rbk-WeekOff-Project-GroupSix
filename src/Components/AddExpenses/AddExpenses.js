@@ -4,7 +4,7 @@ import React from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 // import { Button } from "react-bootstrap";
-
+// Create Expenses Component
 class Expenses extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +25,7 @@ class Expenses extends React.Component {
     });
     console.log(event.target.name);
   }
-  //ComponentDidMount
+  //ComponentDidMount function
   componentDidMount() {
     const token = localStorage.usertoken;
     const decoded = jwt_decode(token);
@@ -35,7 +35,7 @@ class Expenses extends React.Component {
       email: decoded.email,
     });
   }
-  //handlerSubmit
+  //handlerSubmit function
   handlerSubmit(event) {
     event.preventDefault();
     axios
@@ -64,7 +64,7 @@ class Expenses extends React.Component {
   };
   render() {
     return (
-      // general form
+      // general form for add expenses compo
       <form onSubmit={this.handlerSubmit.bind(this)}>
         <div className="myDiv">
           <label> Types of Expenses: </label>
@@ -77,6 +77,7 @@ class Expenses extends React.Component {
             onChange={this.handlerChange.bind(this)}
             placeholder="Enter text..."
           >
+            {/* expenses options */}
             <option value="Operating Expenses ">Operating Expenses </option>
             <option value="Financial Expenses">Financial Expenses</option>
             <option value="Extraordinary Expenses">
@@ -126,4 +127,5 @@ class Expenses extends React.Component {
     );
   }
 }
+// Exporting Expenses compo
 export default Expenses;
