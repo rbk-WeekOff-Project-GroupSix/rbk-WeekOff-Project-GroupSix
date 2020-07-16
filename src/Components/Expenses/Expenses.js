@@ -2,7 +2,7 @@
 import React from "react";
 import axios from "axios";
 // import { Button } from "react-bootstrap";
-import Trans from "./Trans";
+import Trans from "../Trans/Trans";
 import jwt_decode from "jwt-decode";
 
 class Expenses extends React.Component {

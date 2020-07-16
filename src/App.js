@@ -7,13 +7,13 @@ import { Button } from "react-bootstrap";
 import "./App.css";
 import Home from "./Home";
 import Header from "./Components/Header/logo";
-import Navbar from "./Components/Navbar";
-import Landing from "./Components/Landing";
-import Login from "./Components/Login";
-import Register from "./Components/Register";
-import AddExpenses from "./Components/AddExpenses";
-import Expenses from "./Components/Expenses";
-import user from "./Components/user";
+import Navbar from "./Components/Navbar/Navbar";
+import Landing from "./Components/Landing/Landing";
+import Login from "./Components/Login/Login";
+import Register from "./Components/Register/Register";
+import AddExpenses from "./Components/AddExpenses/AddExpenses";
+import Expenses from "./Components/Expenses/Expenses";
+import user from "./Components/User/User";
 
 // creat App Component
 class App extends Component {
