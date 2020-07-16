@@ -1,5 +1,9 @@
+// login Component
 import React, { Component } from "react";
 import { login } from "./UserFunctions";
+import GooLogoin from "./gooLogin";
+import GooLogout from "./gooLogout";
+import GoLogin from "./goLogin";
 
 class Login extends Component {
   constructor() {
@@ -14,9 +18,12 @@ class Login extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  //onChange
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
+
+  //onSubmit
   onSubmit(e) {
     e.preventDefault();
 
@@ -24,7 +31,7 @@ class Login extends Component {
       email: this.state.email,
       password: this.state.password,
     };
-
+    //routing to user Component
     login(user)
       .then((res) => {
         if (res) {
@@ -71,6 +78,9 @@ class Login extends Component {
               >
                 Sign in
               </button>
+              <GoLogin />
+              <GooLogoin />
+              <GooLogout />
             </form>
           </div>
         </div>

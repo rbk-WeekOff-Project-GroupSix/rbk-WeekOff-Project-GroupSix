@@ -1,5 +1,4 @@
 // reuiring express and data base and cors
-
 const express = require("express");
 const database = require("./../db/index");
 const cors = require("cors");
@@ -21,7 +20,7 @@ app.use(
   })
 );
 //app.use(express.static(__dirname + '/../front-end/dist'));
-app.use(express.static(__dirname + "/.././../dist"));
+app.use(express.static("build"));
 
 // Routes
 var Users = require("./routes/Users");
@@ -30,12 +29,24 @@ app.use("/users", Users);
 //Post request
 app.post("/expenses", (req, res) => {
   console.log(req.body);
-  const { expensesTypes, amount, createdAt, description } = req.body;
+  const {
+    expensesTypes,
+    amount,
+    createdAt,
+    description,
+    first_name,
+    last_name,
+    email,
+  } = req.body;
+
   let expensesDocument = new expensesModel({
     expensesTypes: expensesTypes,
     amount: amount,
     createdAt: createdAt,
     description: description,
+    first_name: first_name,
+    last_name: last_name,
+    email: email,
   });
 
   expensesDocument.save((err) => {
@@ -61,10 +72,10 @@ app.get("/expenses", (req, res) => {
 });
 
 //search request
-app.get("/expenses/:spec", (req, res) => {
-  const specVal = req.params.spec;
+app.get("/expenses/:email", (req, res) => {
+  const emailVal = req.params.email;
   expensesModel
-    .find({ spec: specVal })
+    .find({ email: emailVal })
     .then((result) => {
       res.send(result);
     })
@@ -74,7 +85,7 @@ app.get("/expenses/:spec", (req, res) => {
 });
 
 //default port and lisetning
-var port = 4040;
+var port = process.env.PORT || 4040;
 app.listen(port, () => {
   console.log(`app listen to port ${port}`);
 });

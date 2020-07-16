@@ -12,8 +12,28 @@
   box-sizing: border-box;
 }
 
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 10px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #e3e3e3;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+h5{
+    font-family: "Comic Sans MS", cursive, sans-serif; 
+  position: center;
+  font-size: 10px;
+}
 body {
-  background-color: #f7f7f7;
+  background-image: url(Untitled-1.jpg);
+ 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,46 +43,50 @@ body {
   font-family: "Lato", sans-serif;
 }
 
-.container {
-  margin: 30px auto;
-  width: 350px;
-}
+ 
 
 h1 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+
   letter-spacing: 1px;
   margin: 0;
 }
 h2 {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+
   letter-spacing: 1px;
   margin: 0;
 }
 
 h3 {
-  border-bottom: 1px solid #bbb;
+  border-bottom: 4px solid #bbb;
   padding-bottom: 10px;
   margin: 40px 0 10px;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+
 }
 
 h4 {
+  font-family: "Comic Sans MS", cursive, sans-serif;
   margin: 0;
   text-transform: uppercase;
 }
 
 label {
+  font-size: 12px;
   display: inline-block;
   margin: 10px 0;
+  color: #007f5f;
+  font-family: Tahoma, Geneva, sans-serif
 }
 
-input[type="text"],
-input[type="number"] {
-  border: 1px solid #dedede;
-  border-radius: 2px;
-  display: block;
-  font-size: 16px;
-  padding: 10px;
-  width: 100%;
+.btn-block {
+    background-color:#007f5f;
+    display: block;
+    width: 100%;
+    height: 38px;
 }
-
+ 
 /* .btn {
   cursor: pointer;
   background-color: #9c88ff;
@@ -75,3 +99,6 @@ input[type="number"] {
   padding: 10px;
   width: 100%;
 } */
+
+
+

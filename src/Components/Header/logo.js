@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./logoStyle.css";
+import "./logo.css";
 import Income from "../incomeFomr/ienterIncome";
 var Header = (props) => {
   console.log(Income.state);

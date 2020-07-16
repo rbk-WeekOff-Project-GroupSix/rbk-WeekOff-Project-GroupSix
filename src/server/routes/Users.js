@@ -1,14 +1,17 @@
+// reuiring express , data base , cors , jwt and bcrypt
 const express = require("express");
 const users = express.Router();
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
-
 const User = require("./../../db/User");
+
+// invoking express
 users.use(cors());
 
 process.env.SECRET_KEY = "secret";
 
+// post request for register
 users.post("/register", (req, res) => {
   const today = new Date();
   const userData = {
@@ -18,7 +21,7 @@ users.post("/register", (req, res) => {
     password: req.body.password,
     created: today,
   };
-
+  // find user
   User.findOne({
     email: req.body.email,
   })
@@ -31,18 +34,18 @@ users.post("/register", (req, res) => {
               res.json({ status: user.email + "Registered!" });
             })
             .catch((err) => {
-              res.send("error: " + err);
+              res.send.status(400)("error: " + err);
             });
         });
       } else {
-        res.json({ error: "User already exists" });
+        res.status(400).json({ error: "User does not exist" });
       }
     })
     .catch((err) => {
-      res.send("error: " + err);
+      res.status(400).send("error: " + err);
     });
 });
-
+// post request for login
 users.post("/login", (req, res) => {
   User.findOne({
     email: req.body.email,
@@ -73,7 +76,7 @@ users.post("/login", (req, res) => {
       res.send("error: " + err);
     });
 });
-
+// get request for profile
 users.get("/profile", (req, res) => {
   var decoded = jwt.verify(
     req.headers["authorization"],
@@ -94,5 +97,5 @@ users.get("/profile", (req, res) => {
       res.send("error: " + err);
     });
 });
-
+//users export
 module.exports = users;

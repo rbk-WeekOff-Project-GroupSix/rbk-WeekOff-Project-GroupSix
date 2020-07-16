@@ -32,8 +32,17 @@ let expensesSchema = mongoose.Schema({
     type: String,
     required: [true, "Please add some description"],
   },
+  first_name: {
+    type: String,
   },
-);
+  last_name: {
+    type: String,
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+});
 
 // our model
 let expensesModel = mongoose.model("expenses", expensesSchema);
