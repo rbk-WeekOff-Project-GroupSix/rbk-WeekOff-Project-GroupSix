@@ -85,7 +85,7 @@ app.get("/expenses/:email", (req, res) => {
 });
 
 //default port and lisetning
-var port = 4040;
+var port = process.env.PORT || 4040;
 app.listen(port, () => {
   console.log(`app listen to port ${port}`);
 });
