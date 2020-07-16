@@ -7,7 +7,7 @@ import { refreshTokenSetup } from "./utils/refreshToken";
 const clientId =
   "707788443358-u05p46nssla3l8tmn58tpo9r5sommgks.apps.googleusercontent.com";
 
-function gooLogin() {
+function GooLogoin() {
   const onSuccess = (res) => {
     console.log("gooLogin Success: currentUser:", res.profileObj);
     alert(
@@ -38,4 +38,4 @@ function gooLogin() {
   );
 }
 
-export default gooLogin;
+export default GooLogoin;

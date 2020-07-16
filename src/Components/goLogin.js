@@ -11,8 +11,8 @@ firebase.initializeApp({
   authDomain: "reactlogin-c308d.firebaseapp.com",
 });
 
-// creat goLogin Component
-class goLogin extends Component {
+// creat G Component
+class GoLogin extends Component {
   state = { isSignedIn: false, step: 1 };
   nextStep = () => {
     const { step } = this.state;
@@ -23,8 +23,6 @@ class goLogin extends Component {
     signInFlow: "popup",
     signInOptions: [
       firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-      firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-      firebase.auth.TwitterAuthProvider.PROVIDER_ID,
       firebase.auth.GithubAuthProvider.PROVIDER_ID,
       firebase.auth.EmailAuthProvider.PROVIDER_ID,
     ],
@@ -46,7 +44,7 @@ class goLogin extends Component {
     switch (step) {
       case 1:
         return (
-          <div className="gologin">
+          <div className="G">
             {this.state.isSignedIn ? (
               <span>
                 <div>Signed In!</div>
@@ -73,4 +71,4 @@ class goLogin extends Component {
   }
 }
 
-export default goLogin;
+export default GoLogin;

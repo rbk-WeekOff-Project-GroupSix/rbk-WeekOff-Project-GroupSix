@@ -4,7 +4,7 @@ import { GoogleLogout } from "react-google-login";
 const clientId =
   "707788443358-u05p46nssla3l8tmn58tpo9r5sommgks.apps.googleusercontent.com";
 
-function gooLogout() {
+function GooLogout() {
   const onSuccess = () => {
     console.log("gooLogout made successfully");
     alert("gooLogout made successfully ✌");
@@ -21,4 +21,4 @@ function gooLogout() {
   );
 }
 
-export default gooLogout;
+export default GooLogout;
