@@ -34,15 +34,15 @@ users.post("/register", (req, res) => {
               res.json({ status: user.email + "Registered!" });
             })
             .catch((err) => {
-              res.send("error: " + err);
+              res.send.status(400)("error: " + err);
             });
         });
       } else {
-        res.json({ error: "User already exists" });
+        res.status(400).json({ error: "User does not exist" });
       }
     })
     .catch((err) => {
-      res.send("error: " + err);
+      res.status(400).send("error: " + err);
     });
 });
 // post request for login

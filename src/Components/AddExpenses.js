@@ -1,6 +1,7 @@
 // Expenses Component
 import React from "react";
 import axios from "axios";
+import jwt_decode from "jwt-decode";
 // import { Button } from "react-bootstrap";
 
 class Expenses extends React.Component {
@@ -11,6 +12,9 @@ class Expenses extends React.Component {
       amount: 1,
       createdAt: "",
       description: "",
+      first_name: "",
+      last_name: "",
+      email: "",
     };
   }
   // handlerChange
@@ -19,6 +23,15 @@ class Expenses extends React.Component {
       [event.target.name]: event.target.value,
     });
     console.log(event.target.name);
+  }
+  componentDidMount() {
+    const token = localStorage.usertoken;
+    const decoded = jwt_decode(token);
+    this.setState({
+      first_name: decoded.first_name,
+      last_name: decoded.last_name,
+      email: decoded.email,
+    });
   }
   //handlerSubmit
   handlerSubmit(event) {
@@ -29,6 +42,9 @@ class Expenses extends React.Component {
         amount: this.state.amount,
         createdAt: this.state.createdAt,
         description: this.state.description,
+        first_name: this.state.first_name,
+        last_name: this.state.last_name,
+        email: this.state.email,
       })
       .then((res) => {
         console.log(res.data);

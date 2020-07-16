@@ -3,12 +3,14 @@ import React from "react";
 import axios from "axios";
 // import { Button } from "react-bootstrap";
 import Trans from "./Trans";
+import jwt_decode from "jwt-decode";
 
 class Expenses extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       Trans: [],
+      email: "",
     };
   }
   // handlerChange
@@ -18,18 +20,25 @@ class Expenses extends React.Component {
     });
     console.log(event.target.name);
   }
+  componentDidMount() {
+    const token = localStorage.usertoken;
+    const decoded = jwt_decode(token);
+    this.setState({
+      email: decoded.email,
+    });
+  }
   //handlerSubmit
   handlerSubmit(event) {
     event.preventDefault();
     axios
-      .get("http://localhost:4040/expenses")
+      .get(`http://localhost:4040/expenses/${this.state.email}`)
       .then((res) => {
         const finalResult = res.data;
         this.setState({ Trans: finalResult });
         console.log(finalResult);
       })
       .catch((err) => {
-        alert("Hello!!");
+        alert("Hello!! nothing to shown");
         console.log(err);
       });
   }
@@ -46,7 +55,6 @@ class Expenses extends React.Component {
         <div className="myDiv">
           <label> Expenses List: </label>
           <br />
-          <button onClick={this.handlerSubmit.bind(this)}> Show Trans</button>
           <button variant="btn btn-success"> Show Expenses</button>
           <Trans Trans={this.state.Trans} />
           {/* <ul>
