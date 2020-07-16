@@ -1,4 +1,4 @@
-// importing used files and options
+// importing used files and options Header,Navbar,Landing,Login,Register,AddExpenses,Expenses,user
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
@@ -23,7 +23,7 @@ class App extends Component {
     this.setState({ step: step + 1 });
   };
 
-  // rendering firebase and then click on button to show our home page
+  // rendering step for showing our home page
   render() {
     const { step } = this.state;
     //Switch with cases
@@ -31,7 +31,10 @@ class App extends Component {
     switch (step) {
       case 1:
         return (
+          // App div
           <div className="App">
+            {/* Router and Routes for
+            register,login,AddExpenses,Expenses,user,Home */}
             <Router>
               <Header /> <br />
               <div className="App">
@@ -52,5 +55,5 @@ class App extends Component {
     }
   }
 }
-
+// Exporting App Component
 export default App;

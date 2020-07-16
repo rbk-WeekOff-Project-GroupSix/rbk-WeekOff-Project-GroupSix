@@ -1,4 +1,5 @@
 // Expenses Component
+// import modules
 import React from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
@@ -17,13 +18,14 @@ class Expenses extends React.Component {
       email: "",
     };
   }
-  // handlerChange
+  // handlerChange function
   handlerChange(event) {
     this.setState({
       [event.target.name]: event.target.value,
     });
     console.log(event.target.name);
   }
+  //ComponentDidMount
   componentDidMount() {
     const token = localStorage.usertoken;
     const decoded = jwt_decode(token);
