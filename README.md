@@ -1,6 +1,6 @@
 # Expenses Record
 
-> Expense Record is a simple expense tracking application. Allows you to monitor your spending pattern.
+> Expense Record is a simple expense tracking application. Allows you to monitor your spending Record.
 
 ## Team
 
