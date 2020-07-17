@@ -18,36 +18,55 @@ Once the project moves into development, the press release can be used as a touc
 
 ## Heading
 
-> Expenses Tracker
+Expenses Tracker
+
+> Heading
 
 ## Sub-Heading
 
-> Expense Tracker is a simple expense tracking application. Allows you to monitor your spending pattern.
+Expense Tracker is a simple expense tracking application. Allows you to monitor your spending pattern.
+
+> Sub-Heading
 
 ## Summary
 
-> Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+It Helps You Stick to Your Budget. Tracking Your Expenses Can Reveal Spending Issues
+It Helps You Meet Your Financial Objectives.
+
+> Summary
 
 ## Problem
+
+A single page app that will allow users to record their expenses day by day without having to use pen and paper.
 
 > Describe the problem your product solves.
 
 ## Solution
 
+We will display all expenses while allowing users to choose the type of the expenses on each time.
+
+<!-- Users can also find their expenses by type of expenses. -->
+
 > Describe how your product elegantly solves the problem.
 
 ## Quote from You
 
-> A quote from a spokesperson in your company.
+> "We are amazing just the way we are"
 
 ## How to Get Started
+
+Simply register a new account and then login. start recording your expenses.
 
 > Describe how easy it is to get started.
 
 ## Customer Quote
 
+"Expenses record allows me to record my expenses easily.I like the idea"
+
 > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
 
 ## Closing and Call to Action
+
+If you like our idea, Please send us your feedback.
 
 > Wrap it up and give pointers where the reader should go next.

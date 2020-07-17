@@ -3,8 +3,8 @@
 import React, { Component } from "react";
 import jwt_decode from "jwt-decode";
 
-//Create Profile Component
-class Profile extends Component {
+//Create User Component
+class User extends Component {
   constructor() {
     super();
     this.state = {
@@ -56,5 +56,5 @@ class Profile extends Component {
   }
 }
 
-// Exporting Profile Component
-export default Profile;
+// Exporting User Component
+export default User;
