@@ -21,6 +21,8 @@
 
 ## Usage
 
+Simply register a new account and then login. start recording your expenses.
+
 > Some usage instructions
 
 ## Requirements

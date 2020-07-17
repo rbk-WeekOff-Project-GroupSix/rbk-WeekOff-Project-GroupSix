@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import { login } from "../UserFunctions/UserFunctions";
 // import GooLogoin from "../gooLogin";
 // import GooLogout from "../gooLogout";
-// import GoLogin from "../goLogin";
+// import GoLogin from "../GoLogin";
 
 //Create Login Component
 class Login extends Component {
@@ -81,7 +81,7 @@ class Login extends Component {
               >
                 Sign in
               </button>
-              {/* <GoLogin />
+              {/*<GoLogin />
               <GooLogoin />
               <GooLogout /> */}
             </form>
