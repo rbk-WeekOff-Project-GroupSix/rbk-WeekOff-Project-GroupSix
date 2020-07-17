@@ -1,21 +1,21 @@
-# Expenses Tracker
-
 # Contributing
 
 ## General Workflow
--1. Clone done repo and set up environment
-    from the command line:
 
-    npm install 
+-1. Clone done repo and set up environment
+from the command line:
+
+    npm install
     bower install
+
 0. Make sure master is up to date
    git checkout master
    git pull origin master
-   
+
 1. Create a feature branch
    -naming convention: feature/<name of feature>
    git checkout -b feature/<name of feature>
-   git checkout  `your-branch-name` "will move you to your branch"
+   git checkout `your-branch-name` "will move you to your branch"
 
 2. Make small changes on feature branch
    -add individual files NO git add .
@@ -23,25 +23,22 @@
    or git add -p
    git commit -m <your comment>
 
-3. Update your branch w/current master branch 
+3. Update your branch w/current master branch
    i. git checkout master
    ii. git pull origin master
    iii. git checkout feature/<name of feature>
    iv. git rebase master
-     if there are conflicts
-       1. Determine conflict
-       2. View conflict with: 
-         git mergetool
-       3. If conflict can be resolved quickly(less than 10 minutes) AND without changing other people's code
-          Resolve conflict
-       4. If not, just push to your feature branch and let the scrum master know in your pull request
+   if there are conflicts 1. Determine conflict 2. View conflict with:
+   git mergetool 3. If conflict can be resolved quickly(less than 10 minutes) AND without changing other people's code
+   Resolve conflict 4. If not, just push to your feature branch and let the scrum master know in your pull request
 
 4. Push feature branch to github
    git push origin feature/<name of feature>
 
 5. Make pull request to dev
 
-### Make commits to your feature branch. 
+### Make commits to your feature branch.
+
 Make changes and commits on your branch, and make sure that you
 only make changes that are relevant to this branch. If you find
 yourself making unrelated changes, make a new branch for those
@@ -117,9 +114,9 @@ Thanks for contributing!
 ### Guidelines
 
 1. Uphold the current code standard:
-    - Keep your code [DRY][].
-    - Apply the [boy scout rule][].
-    - Follow [STYLE-GUIDE.md](STYLE-GUIDE.md)
+   - Keep your code [DRY][].
+   - Apply the [boy scout rule][].
+   - Follow [STYLE-GUIDE.md](STYLE-GUIDE.md)
 1. Run the [tests][] before submitting a pull request.
 1. Tests are very, very important. Submit tests if your pull request contains
    new, testable behavior.
@@ -132,26 +129,26 @@ This is just to help you organize your process
 - [ ] Did I cut my work branch off of master (don't cut new branches from existing feature brances)?
 - [ ] Did I follow the correct naming convention for my branch?
 - [ ] Is my branch focused on a single main change?
- - [ ] Do all of my changes directly relate to this change?
+- [ ] Do all of my changes directly relate to this change?
 - [ ] Did I rebase the upstream master branch after I finished all my
-  work?
+      work?
 - [ ] Did I write a clear pull request message detailing what changes I made?
 - [ ] Did I get a code review?
- - [ ] Did I make any requested changes from that code review?
+- [ ] Did I make any requested changes from that code review?
 
 If you follow all of these guidelines and make good changes, you should have
 no problem getting your changes merged in.
 
-
 <!-- Links -->
+
 [style guide]: https://github.com/hackreactor-labs/style-guide
 [n-queens]: https://github.com/hackreactor-labs/n-queens
-[Underbar]: https://github.com/hackreactor-labs/underbar
+[underbar]: https://github.com/hackreactor-labs/underbar
 [curriculum workflow diagram]: http://i.imgur.com/p0e4tQK.png
 [cons of merge]: https://f.cloud.github.com/assets/1577682/1458274/1391ac28-435e-11e3-88b6-69c85029c978.png
-[Bookstrap]: https://github.com/hackreactor/bookstrap
-[Taser]: https://github.com/hackreactor/bookstrap
+[bookstrap]: https://github.com/hackreactor/bookstrap
+[taser]: https://github.com/hackreactor/bookstrap
 [tools workflow diagram]: http://i.imgur.com/kzlrDj7.png
-[Git Flow]: http://nvie.com/posts/a-successful-git-branching-model/
-[GitHub Flow]: http://scottchacon.com/2011/08/31/github-flow.html
-[Squash]: http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html
+[git flow]: http://nvie.com/posts/a-successful-git-branching-model/
+[github flow]: http://scottchacon.com/2011/08/31/github-flow.html
+[squash]: http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html

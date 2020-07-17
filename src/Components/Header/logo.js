@@ -1,6 +1,10 @@
+//Header Component
+// importing modules
 import React, { Component } from "react";
 import "./logo.css";
 import Income from "../incomeFomr/ienterIncome";
+
+//Create Expenses Component
 var Header = (props) => {
   console.log(Income.state);
   return (
@@ -14,4 +18,5 @@ var Header = (props) => {
     </div>
   );
 };
+// Exporting Header Component
 export default Header;

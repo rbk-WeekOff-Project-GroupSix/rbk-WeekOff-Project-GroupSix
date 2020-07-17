@@ -21,7 +21,7 @@ users.post("/register", (req, res) => {
     password: req.body.password,
     created: today,
   };
-  // find user
+  // find user by email function
   User.findOne({
     email: req.body.email,
   })
@@ -82,6 +82,7 @@ users.get("/profile", (req, res) => {
     req.headers["authorization"],
     process.env.SECRET_KEY
   );
+  // find user by id function
 
   User.findOne({
     _id: decoded._id,

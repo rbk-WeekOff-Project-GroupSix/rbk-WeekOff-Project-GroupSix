@@ -1,9 +1,8 @@
-// calling mongoose
+// Require mongoose
 const mongoose = require("mongoose");
-
-// connecting mongoose
+// Connecting mongoose
 mongoose
-  .connect("mongodb://localhost/expdb3", {
+  .connect("mongodb+srv://Khaled_20:258852@cluster0.gpjac.mongodb.net/test", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -14,7 +13,7 @@ mongoose
     console.log("Error while connecting to DB", err);
   });
 
-// our Schema
+// Create expensesSchema
 let expensesSchema = mongoose.Schema({
   expensesTypes: {
     type: String,
@@ -44,7 +43,7 @@ let expensesSchema = mongoose.Schema({
   },
 });
 
-// our model
+// Creating expensesModel
 let expensesModel = mongoose.model("expenses", expensesSchema);
 
 //Document and save function
@@ -57,4 +56,5 @@ let expensesModel = mongoose.model("expenses", expensesSchema);
 //   }
 //   });
 
+// Export expensesModel
 module.exports.expensesModel = expensesModel;

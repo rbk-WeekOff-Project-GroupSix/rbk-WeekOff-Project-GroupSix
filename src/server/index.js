@@ -22,7 +22,7 @@ app.use(
 //app.use(express.static(__dirname + '/../front-end/dist'));
 app.use(express.static("build"));
 
-// Routes
+// Routes for using users db
 var Users = require("./routes/Users");
 app.use("/users", Users);
 
@@ -39,6 +39,7 @@ app.post("/expenses", (req, res) => {
     email,
   } = req.body;
 
+  //Create document for saving expenses
   let expensesDocument = new expensesModel({
     expensesTypes: expensesTypes,
     amount: amount,
@@ -49,6 +50,7 @@ app.post("/expenses", (req, res) => {
     email: email,
   });
 
+  //save function for expenses
   expensesDocument.save((err) => {
     if (err) {
       console.log(err);
@@ -71,7 +73,7 @@ app.get("/expenses", (req, res) => {
     });
 });
 
-//search request
+//search request by email
 app.get("/expenses/:email", (req, res) => {
   const emailVal = req.params.email;
   expensesModel
