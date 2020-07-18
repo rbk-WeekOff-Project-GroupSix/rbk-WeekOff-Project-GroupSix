@@ -5,6 +5,7 @@ import axios from "axios";
 // import { Button } from "react-bootstrap";
 import Trans from "../Trans/Trans";
 import jwt_decode from "jwt-decode";
+import Total from "../Total/Total";
 
 //Create Expenses Component
 class Expenses extends React.Component {
@@ -55,8 +56,8 @@ class Expenses extends React.Component {
   render() {
     return (
       // general form for expenses compo
-      <form onSubmit={this.handlerSubmit.bind(this)}>
-        <div className="myDiv">
+      <div className="myDiv">
+        <form onSubmit={this.handlerSubmit.bind(this)}>
           <label> Expenses List: </label>
           <br />
           <button variant="btn btn-success"> Show Expenses</button>
@@ -69,8 +70,10 @@ class Expenses extends React.Component {
               </li>
             ))}
           </ul> */}
-        </div>
-      </form>
+          <br />
+        </form>
+        <Total state={this.state} />
+      </div>
     );
   }
 }
