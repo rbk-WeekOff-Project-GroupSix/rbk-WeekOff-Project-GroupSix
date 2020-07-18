@@ -6,7 +6,7 @@ import axios from "axios";
 export const register = (newUser) => {
   // post request for register
   return axios
-    .post("http://localhost:4040/users/register", {
+    .post("mongodb+srv://Khaled_20:258852@cluster0.gpjac.mongodb.net/test/users/register", {
       first_name: newUser.first_name,
       last_name: newUser.last_name,
       email: newUser.email,
@@ -25,7 +25,7 @@ export const register = (newUser) => {
 export const login = (user) => {
   // post request for login
   return axios
-    .post("http://localhost:4040/users/login", {
+    .post("mongodb+srv://Khaled_20:258852@cluster0.gpjac.mongodb.net/test/users/login", {
       email: user.email,
       password: user.password,
     })
@@ -42,7 +42,7 @@ export const login = (user) => {
 // Exporting getProfile Component
 export const getProfile = (user) => {
   return axios
-    .get("http://localhost:4040/users/profile", {
+    .get("mongodb+srv://Khaled_20:258852@cluster0.gpjac.mongodb.net/test/users/profile", {
       //headers: { Authorization: ` ${this.getToken()}` }
     })
     .then((response) => {

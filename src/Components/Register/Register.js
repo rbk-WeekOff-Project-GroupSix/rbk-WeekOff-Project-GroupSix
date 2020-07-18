@@ -98,7 +98,7 @@ class Register extends Component {
                 type="submit"
                 className="btn btn-lg btn-primary btn-block"
               >
-                Register!
+                Register
               </button>
             </form>
           </div>
